@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #FAF9F6;
+    color: #3D3D3D;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Reduced motion: disable all CSS animations */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Article prose styling for learn and blog pages */
+  .prose-soften {
+    color: #3D3D3D;
+    line-height: 1.8;
+    font-size: 1.0625rem;
+  }
+
+  .prose-soften h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3D3D3D;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-soften h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3D3D3D;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-soften p {
+    margin-bottom: 1.25rem;
+    color: rgba(61, 61, 61, 0.85);
+  }
+
+  .prose-soften ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-soften ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-soften li {
+    margin-bottom: 0.4rem;
+    color: rgba(61, 61, 61, 0.85);
+  }
+
+  .prose-soften a {
+    color: #7C9A8E;
+    text-decoration: none;
+  }
+
+  .prose-soften a:hover {
+    text-decoration: underline;
+  }
+
+  .prose-soften strong {
+    font-weight: 600;
+    color: #3D3D3D;
+  }
+
+  .prose-soften blockquote {
+    border-left: 3px solid #7C9A8E;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: rgba(61, 61, 61, 0.75);
+    font-style: italic;
+  }
+}

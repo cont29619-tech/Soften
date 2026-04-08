@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (update with your actual domain when deployed)
+Sitemap: https://soften.app/sitemap.xml
