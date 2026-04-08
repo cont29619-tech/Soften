@@ -5,37 +5,39 @@ export default {
     './src/**/*.{js,jsx}',
   ],
   safelist: [
-    'bg-sage', 'bg-clay', 'bg-ocean', 'bg-charcoal', 'bg-sos', 'bg-sand',
+    'bg-sage', 'bg-clay', 'bg-ocean', 'bg-charcoal', 'bg-sos', 'bg-slate',
     'bg-sage/20', 'bg-sage/30', 'bg-sage/40', 'bg-sage/10',
-    'text-sage', 'text-clay', 'text-ocean', 'text-sand',
-    'border-sage', 'border-clay', 'border-ocean', 'border-sand',
-    'ring-sage', 'ring-clay', 'ring-ocean', 'ring-sand',
+    'bg-clay/10', 'bg-clay/20', 'bg-ocean/10', 'bg-ocean/8',
+    'text-sage', 'text-clay', 'text-ocean', 'text-slate',
+    'border-sage', 'border-clay', 'border-ocean',
+    'ring-sage', 'ring-clay', 'ring-ocean',
   ],
   theme: {
     extend: {
       colors: {
-        bg:       '#FDFCF9',
-        sand:     '#F5F3ED',
-        sage:     '#7C9A8E',
-        clay:     '#C4A484',
-        ocean:    '#6B8FA3',
-        charcoal: '#3D3D3D',
-        sos:      '#E07A6A',
+        // Cool & clinical-calm palette
+        bg:       '#F4F6F9',   // cool off-white with a blue tint
+        slate:    '#E8EDF3',   // light blue-gray surface
+        sage:     '#4A82A6',   // slate blue (primary) — replaces warm sage
+        clay:     '#6B9BAF',   // muted steel blue (secondary) — replaces terracotta
+        ocean:    '#355F7A',   // deep navy-teal (accent)
+        charcoal: '#1A2B3C',   // dark navy text — cooler than warm gray
+        sos:      '#D95F4B',   // kept coral-red for urgency/SOS
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans:  ['Inter', 'system-ui', 'sans-serif'],
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       animation: {
-        'sos-pulse': 'sos-pulse 2.5s ease-in-out infinite',
-        'fade-up':   'fade-up 0.6s ease-out forwards',
-        'fade-in':   'fade-in 0.4s ease-out forwards',
+        'sos-pulse':  'sos-pulse 2.5s ease-in-out infinite',
+        'fade-up':    'fade-up 0.6s ease-out forwards',
+        'fade-in':    'fade-in 0.4s ease-out forwards',
         'blob-pulse': 'blob-pulse 4s ease-in-out infinite',
       },
       keyframes: {
         'sos-pulse': {
-          '0%, 100%': { boxShadow: '0 0 0 0 rgba(224, 122, 106, 0.5)' },
-          '50%':      { boxShadow: '0 0 0 10px rgba(224, 122, 106, 0)' },
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(217, 95, 75, 0.5)' },
+          '50%':      { boxShadow: '0 0 0 10px rgba(217, 95, 75, 0)' },
         },
         'fade-up': {
           '0%':   { opacity: '0', transform: 'translateY(20px)' },
@@ -51,7 +53,7 @@ export default {
         },
       },
       borderRadius: {
-        'xl': '12px',
+        'xl':  '12px',
         '2xl': '16px',
         '3xl': '24px',
       },

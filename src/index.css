@@ -4,8 +4,8 @@
 
 @layer base {
   html {
-    background-color: #FDFCF9;
-    color: #3D3D3D;
+    background-color: #F4F6F9;
+    color: #1A2B3C;
     scroll-behavior: smooth;
   }
 
@@ -27,17 +27,17 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-sm shadow-black/5;
+    @apply bg-white/60 backdrop-blur-md border border-white/50 shadow-sm shadow-black/5;
   }
   .glass-card {
-    @apply bg-white/75 backdrop-blur-lg border border-white/60 shadow-sm shadow-charcoal/5 hover:shadow-md hover:shadow-sage/10 transition-all duration-300;
+    @apply bg-white/70 backdrop-blur-lg border border-white/60 shadow-sm shadow-charcoal/5 hover:shadow-md hover:shadow-sage/10 transition-all duration-300;
   }
 }
 
 @layer components {
   /* Article prose styling for learn and blog pages */
   .prose-soften {
-    color: #3D3D3D;
+    color: #1A2B3C;
     line-height: 1.8;
     font-size: 1.0625rem;
   }
@@ -45,7 +45,7 @@
   .prose-soften h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #3D3D3D;
+    color: #1A2B3C;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
   }
@@ -53,14 +53,14 @@
   .prose-soften h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #3D3D3D;
+    color: #1A2B3C;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
 
   .prose-soften p {
     margin-bottom: 1.25rem;
-    color: rgba(61, 61, 61, 0.85);
+    color: rgba(26, 43, 60, 0.8);
   }
 
   .prose-soften ul {
@@ -77,11 +77,11 @@
 
   .prose-soften li {
     margin-bottom: 0.4rem;
-    color: rgba(61, 61, 61, 0.85);
+    color: rgba(26, 43, 60, 0.8);
   }
 
   .prose-soften a {
-    color: #7C9A8E;
+    color: #4A82A6;
     text-decoration: none;
   }
 
@@ -91,14 +91,14 @@
 
   .prose-soften strong {
     font-weight: 600;
-    color: #3D3D3D;
+    color: #1A2B3C;
   }
 
   .prose-soften blockquote {
-    border-left: 3px solid #7C9A8E;
+    border-left: 3px solid #4A82A6;
     padding-left: 1rem;
     margin: 1.5rem 0;
-    color: rgba(61, 61, 61, 0.75);
+    color: rgba(26, 43, 60, 0.65);
     font-style: italic;
   }
 }
