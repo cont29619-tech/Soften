@@ -7,7 +7,7 @@ export default function About() {
       <SEO
         title="About Soften — Free Nervous System Regulation Tools"
         description="Soften is a free, independent wellness resource offering nervous system regulation tools based on somatic principles and polyvagal theory. Learn about our mission."
-        canonical="https://soften.app/about"
+        canonical="https://soften.ink/about"
       />
       <div className="max-w-2xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-semibold text-charcoal mb-6">About Soften</h1>

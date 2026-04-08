@@ -129,7 +129,7 @@ export default function ShakeItOff() {
       <SEO
         title="Therapeutic Shaking — Release Stored Tension & Stress | Soften"
         description="Let your body shake to release stored stress and tension. A guided therapeutic shaking exercise inspired by TRE. Free, instant, no sign-up required."
-        canonical="https://soften.app/tools/shake-it-off"
+        canonical="https://soften.ink/tools/shake-it-off"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

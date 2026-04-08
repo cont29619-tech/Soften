@@ -158,9 +158,9 @@ export default function BlogPost() {
     publisher: {
       '@type': 'Organization',
       name: 'Soften',
-      logo: { '@type': 'ImageObject', url: 'https://soften.app/favicon.svg' },
+      logo: { '@type': 'ImageObject', url: 'https://soften.ink/favicon.svg' },
     },
-    image: `https://soften.app${post.image ?? '/og-image.png'}`,
+    image: `https://soften.ink${post.image ?? '/og-image.png'}`,
   }
 
   // Related posts: same category, not this post
@@ -183,7 +183,7 @@ export default function BlogPost() {
       <SEO
         title={post.title}
         description={post.metaDescription}
-        canonical={`https://soften.app/blog/${post.slug}`}
+        canonical={`https://soften.ink/blog/${post.slug}`}
         type="article"
         jsonLd={jsonLd}
       />

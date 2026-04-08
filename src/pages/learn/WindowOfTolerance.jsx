@@ -9,7 +9,7 @@ export default function WindowOfTolerance() {
       <SEO
         title="The Window of Tolerance — What It Is and How to Widen Yours"
         description="The window of tolerance explains why you sometimes feel overwhelmed or numb. Learn what hyperarousal and hypoarousal look like and how to widen your window."
-        canonical="https://soften.app/learn/window-of-tolerance"
+        canonical="https://soften.ink/learn/window-of-tolerance"
         type="article"
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

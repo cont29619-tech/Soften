@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
 const SITE_NAME = 'Soften'
-const SITE_URL = 'https://soften.app'
+const SITE_URL = 'https://soften.ink'
 const DEFAULT_OG = '/og-image.png'
 
 export default function SEO({

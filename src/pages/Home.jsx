@@ -54,7 +54,7 @@ export default function Home() {
       <SEO
         title="Your Nervous System First Aid Kit — Free, Instant, No Sign-Up"
         description="Free nervous system regulation tools based on somatic principles and polyvagal theory. Breathing exercises, grounding techniques, body scans, and more. No account needed."
-        canonical="https://soften.app"
+        canonical="https://soften.ink"
       />
 
       {/* Hero */}

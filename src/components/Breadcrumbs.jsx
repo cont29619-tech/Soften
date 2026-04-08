@@ -8,7 +8,7 @@ export default function Breadcrumbs({ crumbs }) {
       '@type': 'ListItem',
       position: i + 1,
       name: crumb.label,
-      ...(crumb.href ? { item: `https://soften.app${crumb.href}` } : {}),
+      ...(crumb.href ? { item: `https://soften.ink${crumb.href}` } : {}),
     })),
   }
 

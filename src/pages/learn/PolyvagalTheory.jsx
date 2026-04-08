@@ -9,7 +9,7 @@ export default function PolyvagalTheory() {
       <SEO
         title="Polyvagal Theory Explained Simply — The Vagus Nerve & Your 3 States"
         description="Polyvagal theory explains why you feel safe, anxious, or shut down — through the lens of the vagus nerve and three nervous system states. Plain-language guide."
-        canonical="https://soften.app/learn/polyvagal-theory"
+        canonical="https://soften.ink/learn/polyvagal-theory"
         type="article"
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

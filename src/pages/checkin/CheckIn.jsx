@@ -67,7 +67,7 @@ export default function CheckIn() {
       <SEO
         title="Daily Nervous System Check-In — How Does Your Body Feel?"
         description="A 30-second body check-in to understand your nervous system state and find the right regulation tool for how you feel right now."
-        canonical="https://soften.app/check-in"
+        canonical="https://soften.ink/check-in"
       />
       <div className="max-w-2xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

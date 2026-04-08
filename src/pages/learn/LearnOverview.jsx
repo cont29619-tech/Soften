@@ -39,7 +39,7 @@ export default function LearnOverview() {
       <SEO
         title="Understanding Your Nervous System — Free Guides"
         description="Free guides to nervous system 101, the window of tolerance, polyvagal theory, and why your body holds stress. Written in plain language for everyday people."
-        canonical="https://soften.app/learn"
+        canonical="https://soften.ink/learn"
       />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <div className="text-center mb-12">

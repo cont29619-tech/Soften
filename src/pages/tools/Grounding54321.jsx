@@ -81,7 +81,7 @@ export default function Grounding54321() {
       <SEO
         title="5-4-3-2-1 Grounding Technique — Free Interactive Exercise"
         description="Use the 5-4-3-2-1 grounding technique to anchor yourself to the present moment and reduce anxiety. Free interactive exercise, no sign-up needed."
-        canonical="https://soften.app/tools/grounding-54321"
+        canonical="https://soften.ink/tools/grounding-54321"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

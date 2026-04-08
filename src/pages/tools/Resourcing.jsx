@@ -64,7 +64,7 @@ export default function Resourcing() {
       <SEO
         title="Resourcing — Build Your Inner Safe Place | Soften"
         description="Resourcing is a somatic technique to build an inner reservoir of calm and safety. Guided exercise, free, no sign-up. Based on somatic therapy principles."
-        canonical="https://soften.app/tools/resourcing"
+        canonical="https://soften.ink/tools/resourcing"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

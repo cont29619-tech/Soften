@@ -71,7 +71,7 @@ export default function SelfTouchGrounding() {
       <SEO
         title="Self-Touch Grounding — Calm Your Nervous System Through Touch"
         description="Use gentle self-touch — hand on heart, butterfly hug, face cup — to activate the vagus nerve and soothe anxiety. Free guided exercise, no sign-up."
-        canonical="https://soften.app/tools/self-touch-grounding"
+        canonical="https://soften.ink/tools/self-touch-grounding"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

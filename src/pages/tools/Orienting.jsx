@@ -84,7 +84,7 @@ export default function Orienting() {
       <SEO
         title="Orienting Exercise — A Polyvagal Grounding Technique | Soften"
         description="The orienting exercise uses slow, curious visual exploration to signal safety to your nervous system. Based on polyvagal theory. Free and instant."
-        canonical="https://soften.app/tools/orienting"
+        canonical="https://soften.ink/tools/orienting"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

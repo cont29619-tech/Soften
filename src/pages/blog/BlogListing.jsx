@@ -18,7 +18,7 @@ export default function BlogListing() {
       <SEO
         title="Soften Blog — Nervous System Tips, Somatic Exercises & Wellness Guides"
         description="Practical guides to calming your nervous system, understanding somatic exercises, polyvagal theory, and building resilience. Free articles from the Soften team."
-        canonical="https://soften.app/blog"
+        canonical="https://soften.ink/blog"
       />
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

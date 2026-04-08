@@ -9,7 +9,7 @@ export default function WhyBodyHoldsStress() {
       <SEO
         title="Why Your Body Holds Onto Stress — And What to Do About It"
         description="Learn why stress and trauma get stored in the body — fascia, muscle memory, somatic patterns — and why body-based approaches are often necessary for healing."
-        canonical="https://soften.app/learn/why-body-holds-stress"
+        canonical="https://soften.ink/learn/why-body-holds-stress"
         type="article"
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

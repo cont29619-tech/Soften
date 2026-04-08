@@ -115,7 +115,7 @@ export default function BodyScan() {
       <SEO
         title="Free Guided Body Scan for Stress & Tension Relief"
         description="A gentle guided body scan meditation to release held tension, reduce stress, and reconnect with your body. Free, instant access, no sign-up."
-        canonical="https://soften.app/tools/body-scan"
+        canonical="https://soften.ink/tools/body-scan"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

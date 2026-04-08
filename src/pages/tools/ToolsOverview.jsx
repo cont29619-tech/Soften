@@ -9,7 +9,7 @@ export default function ToolsOverview() {
       <SEO
         title="Free Nervous System Regulation Tools"
         description="Browse all free nervous system regulation tools — breathing exercises, grounding techniques, body scan, therapeutic shaking, and more. No sign-up required."
-        canonical="https://soften.app/tools"
+        canonical="https://soften.ink/tools"
       />
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-12">

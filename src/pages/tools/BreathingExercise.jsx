@@ -205,7 +205,7 @@ export default function BreathingExercise() {
       <SEO
         title="Free Breathing Exercise for Anxiety — 4-7-8, Box Breathing & More"
         description="Use our free animated breathing pacer for anxiety relief. Choose from 4-7-8 breathing, box breathing, or simple calm breath. No sign-up required."
-        canonical="https://soften.app/tools/breathing-exercise"
+        canonical="https://soften.ink/tools/breathing-exercise"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

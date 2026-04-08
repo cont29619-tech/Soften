@@ -9,7 +9,7 @@ export default function NervousSystem101() {
       <SEO
         title="Your Nervous System Explained Simply — Sympathetic, Parasympathetic & Dorsal"
         description="A plain-language guide to the autonomic nervous system — sympathetic, parasympathetic, and dorsal vagal. Understand what's happening in your body."
-        canonical="https://soften.app/learn/nervous-system-101"
+        canonical="https://soften.ink/learn/nervous-system-101"
         type="article"
       />
       <div className="max-w-2xl mx-auto px-4 py-10">

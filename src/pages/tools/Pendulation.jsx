@@ -63,7 +63,7 @@ export default function Pendulation() {
       <SEO
         title="Pendulation Exercise — Somatic Technique for Nervous System Balance"
         description="Learn pendulation, a somatic technique that builds nervous system resilience by gently moving between resource and difficult sensations. Free and guided."
-        canonical="https://soften.app/tools/pendulation"
+        canonical="https://soften.ink/tools/pendulation"
         jsonLd={jsonLd}
       />
       <div className="max-w-2xl mx-auto px-4 py-10">
