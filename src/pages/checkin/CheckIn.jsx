@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import SEO from '../../components/SEO.jsx'
 import { STATES } from './states.js'
 import { getHistory, addEntry } from '../../utils/checkInStorage.js'
@@ -70,16 +70,16 @@ export default function CheckIn() {
         canonical="https://soften.ink/check-in"
       />
       <div className="max-w-2xl mx-auto px-4 py-12">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-semibold text-charcoal mb-2">How Are You Right Now?</h1>
-          <p className="text-charcoal/60">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl font-serif text-charcoal mb-4">How Are You Right Now?</h1>
+          <p className="text-charcoal/60 text-lg">
             A quick check-in with your body. Takes 30 seconds.
           </p>
         </div>
 
         {/* State selector */}
         <div
-          className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10"
           role="radiogroup"
           aria-label="How does your body feel right now?"
         >
@@ -88,53 +88,59 @@ export default function CheckIn() {
               key={state.id}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.07 }}
+              transition={{ delay: i * 0.05 }}
               onClick={() => handleSelect(state)}
-              className={`text-left p-4 rounded-2xl border-2 transition-all ${
+              className={`flex flex-col items-center justify-center text-center p-6 rounded-[2rem] transition-all duration-300 ${
                 selected?.id === state.id
-                  ? 'border-sage bg-sage/8 shadow-sm'
-                  : 'border-charcoal/10 bg-white hover:border-sage/40 hover:shadow-sm'
+                  ? 'border border-sage/30 bg-sage/15 shadow-md scale-[1.02]'
+                  : 'glass-card hover:scale-[1.02]'
               }`}
               role="radio"
               aria-checked={selected?.id === state.id}
               aria-label={state.label}
             >
-              <div className="text-2xl mb-2">{state.icon}</div>
-              <p className="font-medium text-charcoal text-sm leading-tight">{state.label}</p>
-              <p className="text-xs text-charcoal/50 mt-0.5 leading-snug">{state.description}</p>
+              <div className="text-4xl mb-3">{state.icon}</div>
+              <p className="font-serif font-medium text-charcoal text-lg leading-tight mb-1">{state.label}</p>
+              <p className="text-xs text-charcoal/60 leading-snug">{state.description}</p>
             </motion.button>
           ))}
         </div>
 
         {/* Recommendation */}
+        <AnimatePresence>
         {selected && (
           <motion.div
+            key={selected.id}
             id="recommendation"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl p-6 shadow-sm border border-sage/25"
+            initial={{ opacity: 0, y: 20, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="glass-card rounded-3xl p-8 overflow-hidden"
           >
-            <div className="flex items-start gap-3 mb-4">
-              <span className="text-2xl">{selected.icon}</span>
+            <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
+              <span className="text-3xl bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm shrink-0">{selected.icon}</span>
               <div>
-                <p className="font-semibold text-charcoal">{selected.label}</p>
-                <p className="text-charcoal/60 text-sm mt-1 leading-relaxed">{selected.recommendation.text}</p>
+                <p className="font-serif text-xl font-medium text-charcoal mb-2">{selected.label}</p>
+                <p className="text-charcoal/70 text-base leading-relaxed">{selected.recommendation.text}</p>
               </div>
             </div>
-            <Link
-              to={`/tools/${selected.recommendation.toolSlug}`}
-              className="inline-block bg-sage text-white font-medium px-5 py-2.5 rounded-xl hover:bg-sage/90 transition-colors text-sm"
-            >
-              {selected.recommendation.toolLabel} →
-            </Link>
-            <button
-              onClick={() => setSelected(null)}
-              className="ml-3 text-sm text-charcoal/40 hover:text-charcoal transition-colors underline underline-offset-2"
-            >
-              Choose again
-            </button>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                to={`/tools/${selected.recommendation.toolSlug}`}
+                className="bg-sage text-white font-medium px-6 py-3 rounded-2xl hover:bg-sage/90 shadow-sm hover:translate-y-[-2px] transition-all"
+              >
+                {selected.recommendation.toolLabel} →
+              </Link>
+              <button
+                onClick={() => setSelected(null)}
+                className="text-sm text-charcoal/50 hover:text-charcoal transition-colors underline underline-offset-4"
+              >
+                Choose again
+              </button>
+            </div>
           </motion.div>
         )}
+        </AnimatePresence>
 
         {/* Motivational message */}
         <div className="mt-8 text-center">

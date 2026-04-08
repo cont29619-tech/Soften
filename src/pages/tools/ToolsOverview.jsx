@@ -13,7 +13,7 @@ export default function ToolsOverview() {
       />
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-semibold text-charcoal mb-3">Nervous System Regulation Tools</h1>
+          <h1 className="text-5xl font-serif text-charcoal mb-4 tracking-tight">Nervous System Regulation Tools</h1>
           <p className="text-charcoal/60 text-lg max-w-xl mx-auto">
             Pick a tool that fits your moment. Each one takes under 5 minutes — and every one is free.
           </p>
@@ -22,7 +22,7 @@ export default function ToolsOverview() {
         {/* First Aid section */}
         <section aria-labelledby="first-aid-heading" className="mb-14">
           <div className="flex items-center gap-3 mb-6">
-            <h2 id="first-aid-heading" className="text-xl font-semibold text-charcoal">First Aid — Quick Relief</h2>
+            <h2 id="first-aid-heading" className="text-2xl font-serif text-charcoal">First Aid — Quick Relief</h2>
             <span className="text-xs bg-sos/10 text-sos px-2.5 py-0.5 rounded-full font-medium">Start here</span>
           </div>
           <p className="text-charcoal/55 text-sm mb-6">
@@ -45,7 +45,7 @@ export default function ToolsOverview() {
         {/* Go Deeper section */}
         <section aria-labelledby="deeper-heading">
           <div className="flex items-center gap-3 mb-6">
-            <h2 id="deeper-heading" className="text-xl font-semibold text-charcoal">Go Deeper — Build Resilience</h2>
+            <h2 id="deeper-heading" className="text-2xl font-serif text-charcoal">Go Deeper — Build Resilience</h2>
             <span className="text-xs bg-sage/15 text-sage px-2.5 py-0.5 rounded-full font-medium">Somatic</span>
           </div>
           <p className="text-charcoal/55 text-sm mb-6">
@@ -67,11 +67,11 @@ export default function ToolsOverview() {
         </section>
 
         {/* Not sure where to start */}
-        <div className="mt-14 bg-sage/8 rounded-2xl p-7 text-center">
-          <p className="text-charcoal/70 mb-3">Not sure which tool to use?</p>
+        <div className="mt-16 glass-card rounded-3xl p-8 text-center max-w-2xl mx-auto">
+          <p className="text-charcoal/80 text-lg mb-4 font-medium">Not sure which tool to use?</p>
           <a
             href="/check-in"
-            className="inline-block bg-sage text-white font-medium px-6 py-2.5 rounded-xl hover:bg-sage/90 transition-colors"
+            className="inline-block bg-sage text-white font-medium px-8 py-3 rounded-2xl hover:bg-sage/90 shadow-sm hover:shadow-md transition-all text-base"
           >
             Take a quick body check-in →
           </a>

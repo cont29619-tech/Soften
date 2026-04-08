@@ -63,10 +63,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl sm:text-5xl font-semibold text-charcoal leading-tight mb-4"
+          className="text-5xl sm:text-6xl font-serif font-medium text-charcoal leading-tight mb-5 tracking-tight"
         >
           Your Nervous System<br />
-          <span className="text-sage">First Aid Kit</span>
+          <span className="text-sage italic">First Aid Kit</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -81,17 +81,17 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
         >
           <Link
             to="/tools/breathing-exercise"
-            className="w-full sm:w-auto bg-sage text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-sage/90 transition-colors text-base"
+            className="w-full sm:w-auto bg-sage text-white font-medium px-8 py-3.5 rounded-2xl hover:bg-sage/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-base"
           >
             I need calm now
           </Link>
           <Link
             to="/check-in"
-            className="w-full sm:w-auto border border-charcoal/20 text-charcoal font-medium px-7 py-3.5 rounded-xl hover:border-sage/50 hover:text-sage transition-colors text-base"
+            className="w-full sm:w-auto glass-card text-charcoal font-medium px-8 py-3.5 rounded-2xl transition-all text-base"
           >
             Start daily check-in
           </Link>
@@ -123,8 +123,8 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-4 py-14">
         <FadeInSection>
           <div className="flex items-center gap-3 mb-2">
-            <h2 className="text-2xl font-semibold text-charcoal">First Aid Tools</h2>
-            <span className="text-xs bg-sos/10 text-sos px-2.5 py-0.5 rounded-full font-medium">Quick relief</span>
+            <h2 className="text-3xl font-serif text-charcoal">First Aid Tools</h2>
+            <span className="text-xs bg-sos/10 text-sos px-3 py-1 rounded-full font-medium tracking-wide">Quick relief</span>
           </div>
           <p className="text-charcoal/55 text-sm mb-6">These work fast. Open one when you need help right now.</p>
         </FadeInSection>
@@ -141,8 +141,8 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-4 pb-14">
         <FadeInSection>
           <div className="flex items-center gap-3 mb-2">
-            <h2 className="text-2xl font-semibold text-charcoal">Go Deeper</h2>
-            <span className="text-xs bg-sage/15 text-sage px-2.5 py-0.5 rounded-full font-medium">Build resilience</span>
+            <h2 className="text-3xl font-serif text-charcoal">Go Deeper</h2>
+            <span className="text-xs bg-sage/15 text-sage px-3 py-1 rounded-full font-medium tracking-wide">Build resilience</span>
           </div>
           <p className="text-charcoal/55 text-sm mb-6">Somatic practices that build your nervous system's long-term capacity.</p>
         </FadeInSection>
@@ -186,12 +186,12 @@ export default function Home() {
             <FadeInSection key={card.href} delay={i * 0.07}>
               <Link
                 to={card.href}
-                className="block bg-white rounded-2xl p-5 shadow-sm border border-charcoal/8 hover:border-sage/40 hover:shadow-md transition-all h-full"
+                className="block glass-card rounded-2xl p-6 h-full group"
               >
-                <div className="text-2xl mb-3">{card.icon}</div>
-                <h3 className="font-semibold text-charcoal text-base mb-1">{card.title}</h3>
-                <p className="text-sm text-charcoal/60 leading-relaxed">{card.description}</p>
-                <div className="mt-3 text-sm text-sage font-medium">Read →</div>
+                <div className="text-2xl mb-4 bg-white/50 w-12 h-12 rounded-full flex items-center justify-center shadow-sm">{card.icon}</div>
+                <h3 className="font-serif font-medium text-charcoal text-lg mb-2">{card.title}</h3>
+                <p className="text-sm text-charcoal/65 leading-relaxed">{card.description}</p>
+                <div className="mt-4 text-sm text-sage font-medium opacity-80 group-hover:opacity-100 transition-opacity">Read article →</div>
               </Link>
             </FadeInSection>
           ))}
@@ -201,10 +201,10 @@ export default function Home() {
       {/* Blog preview */}
       <section className="max-w-5xl mx-auto px-4 pb-14">
         <FadeInSection>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold text-charcoal">Latest from the Blog</h2>
-            <Link to="/blog" className="text-sm text-sage hover:underline font-medium">
-              All posts →
+          <div className="flex justify-between items-end mb-8 border-b border-charcoal/10 pb-4">
+            <h2 className="text-3xl font-serif text-charcoal">Latest from the Journal</h2>
+            <Link to="/blog" className="text-sm text-sage hover:text-sage/80 font-medium transition-colors">
+              Read all posts →
             </Link>
           </div>
         </FadeInSection>

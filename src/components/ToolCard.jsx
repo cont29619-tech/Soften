@@ -9,7 +9,7 @@ export default function ToolCard({ tool, showTags = true }) {
     >
       <Link
         to={`/tools/${tool.slug}`}
-        className="block h-full bg-white rounded-2xl p-5 shadow-sm border border-charcoal/8 hover:border-sage/40 hover:shadow-md transition-all"
+        className="block h-full glass-card rounded-2xl p-6 group focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent"
         aria-label={`${tool.title} — ${tool.description}`}
       >
         <div className="text-2xl mb-3" aria-hidden="true">{tool.icon}</div>

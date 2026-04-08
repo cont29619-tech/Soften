@@ -72,15 +72,22 @@ function BreathingCircle({ phase, phaseDuration, phaseLabel, secondsLeft }) {
     <div className="relative flex items-center justify-center w-56 h-56 mx-auto my-6" aria-live="polite" aria-atomic="true">
       {/* Outer glow */}
       <motion.div
-        className="absolute inset-0 rounded-full"
+        className="absolute inset-0 rounded-full blur-3xl opacity-80"
         style={{ backgroundColor: color }}
-        animate={{ scale: prefersReduced ? 1 : scale * 1.2 }}
+        animate={{ scale: prefersReduced ? 1 : scale * 1.8 }}
+        transition={{ duration: prefersReduced ? 0 : phaseDuration, ease: 'easeInOut' }}
+      />
+      {/* Inner glow */}
+      <motion.div
+        className="absolute inset-4 rounded-full blur-xl"
+        style={{ backgroundColor: color }}
+        animate={{ scale: prefersReduced ? 1 : scale * 1.3 }}
         transition={{ duration: prefersReduced ? 0 : phaseDuration, ease: 'easeInOut' }}
       />
       {/* Main circle */}
       <motion.div
-        className="relative w-44 h-44 rounded-full flex items-center justify-center"
-        style={{ backgroundColor: color.replace('0.5', '0.7').replace('0.4', '0.6') }}
+        className="relative w-44 h-44 rounded-full flex items-center justify-center shadow-md backdrop-blur-md border border-white/20"
+        style={{ backgroundColor: color.replace('0.5', '0.75').replace('0.4', '0.65') }}
         animate={{ scale: prefersReduced ? 1 : scale }}
         transition={{ duration: prefersReduced ? 0 : phaseDuration, ease: 'easeInOut' }}
       >
@@ -211,16 +218,16 @@ export default function BreathingExercise() {
       <div className="max-w-2xl mx-auto px-4 py-10">
         <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Tools', href: '/tools' }, { label: 'Breathing Pacer' }]} />
 
-        <h1 className="text-3xl font-semibold text-charcoal mb-3">Breathing Pacer</h1>
-        <p className="text-charcoal/65 leading-relaxed mb-8">
+        <h1 className="text-4xl font-serif text-charcoal mb-4">Breathing Pacer</h1>
+        <p className="text-charcoal/70 leading-relaxed mb-8 text-lg">
           Controlled breathing is one of the fastest ways to calm your nervous system. When you slow
           your exhale, you activate the parasympathetic ("rest and digest") branch — the one that signals
           safety. Choose a pattern below and let the circle guide you.
         </p>
 
         {/* When to use */}
-        <div className="bg-sage/8 rounded-2xl p-5 mb-8">
-          <h2 className="font-semibold text-charcoal mb-2">When to use this</h2>
+        <div className="glass-card rounded-2xl p-6 mb-10">
+          <h2 className="font-serif text-xl text-charcoal mb-3">When to use this</h2>
           <ul className="space-y-1 text-sm text-charcoal/70">
             <li>• Before a stressful meeting or conversation</li>
             <li>• When anxiety or panic is rising</li>
@@ -241,10 +248,10 @@ export default function BreathingExercise() {
                   <button
                     key={key}
                     onClick={() => setPatternKey(key)}
-                    className={`rounded-xl px-3 py-2.5 text-sm font-medium text-left transition-colors border ${
+                    className={`rounded-2xl px-3 py-3 text-sm font-medium text-left transition-all border ${
                       patternKey === key
-                        ? 'bg-sage text-white border-sage'
-                        : 'bg-white text-charcoal/70 border-charcoal/15 hover:border-sage/40'
+                        ? 'bg-sage text-white border-sage shadow-sm'
+                        : 'glass text-charcoal/80 border-charcoal/15 hover:border-sage/40'
                     }`}
                     aria-pressed={patternKey === key}
                   >
@@ -263,10 +270,10 @@ export default function BreathingExercise() {
                   <button
                     key={d.value}
                     onClick={() => setSessionDuration(d.value)}
-                    className={`flex-1 rounded-xl px-3 py-2 text-sm font-medium transition-colors border ${
+                    className={`flex-1 rounded-2xl px-3 py-2.5 text-sm font-medium transition-all border ${
                       sessionDuration === d.value
-                        ? 'bg-sage text-white border-sage'
-                        : 'bg-white text-charcoal/70 border-charcoal/15 hover:border-sage/40'
+                        ? 'bg-sage text-white border-sage shadow-sm'
+                        : 'glass text-charcoal/80 border-charcoal/15 hover:border-sage/40'
                     }`}
                     aria-pressed={sessionDuration === d.value}
                   >
@@ -278,7 +285,7 @@ export default function BreathingExercise() {
 
             <button
               onClick={startSession}
-              className="w-full bg-sage text-white font-medium py-3 rounded-xl hover:bg-sage/90 transition-colors text-base"
+              className="w-full bg-sage text-white font-medium py-3.5 rounded-2xl hover:bg-sage/90 shadow-sm hover:translate-y-[-2px] transition-all text-base mt-2"
             >
               Begin breathing
             </button>
