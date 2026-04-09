@@ -15,26 +15,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Cool & clinical-calm palette
-        bg:       '#F4F6F9',   // cool off-white with a blue tint
-        slate:    '#E8EDF3',   // light blue-gray surface
-        sage:     '#4A82A6',   // slate blue (primary) — replaces warm sage
-        clay:     '#6B9BAF',   // muted steel blue (secondary) — replaces terracotta
-        ocean:    '#355F7A',   // deep navy-teal (accent)
-        charcoal: '#1A2B3C',   // dark navy text — cooler than warm gray
-        sos:      '#D95F4B',   // kept coral-red for urgency/SOS
+        // Embodied Editorial — warm parchment palette
+        bg:       '#F7F5F1',   // warm parchment
+        slate:    '#EDE9E2',   // warm linen surface
+        sage:     '#5A8A6E',   // botanical green (primary)
+        clay:     '#B56E4F',   // terracotta (secondary accent)
+        ocean:    '#2D6073',   // deep teal (deep accent)
+        charcoal: '#1E2920',   // dark forest (text)
+        sos:      '#C8533F',   // deeper coral for urgency
       },
       fontFamily: {
-        sans:  ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans:  ['"Nunito"', 'system-ui', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
       },
       animation: {
         'sos-pulse':  'sos-pulse 2.5s ease-in-out infinite',
         'fade-up':    'fade-up 0.6s ease-out forwards',
         'fade-in':    'fade-in 0.4s ease-out forwards',
-        'blob-pulse': 'blob-pulse 4s ease-in-out infinite',
+        'blob-pulse': 'blob-pulse 7s ease-in-out infinite',
+        'float':      'float 6s ease-in-out infinite',
       },
       keyframes: {
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%':      { transform: 'translateY(-18px)' },
+        },
         'sos-pulse': {
           '0%, 100%': { boxShadow: '0 0 0 0 rgba(217, 95, 75, 0.5)' },
           '50%':      { boxShadow: '0 0 0 10px rgba(217, 95, 75, 0)' },

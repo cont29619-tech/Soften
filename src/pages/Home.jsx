@@ -58,57 +58,93 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="max-w-3xl mx-auto px-4 pt-16 pb-14 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-5xl sm:text-6xl font-serif font-medium text-charcoal leading-tight mb-5 tracking-tight"
-        >
-          Your Nervous System<br />
-          <span className="text-sage italic">First Aid Kit</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg text-charcoal/60 max-w-xl mx-auto mb-8 leading-relaxed"
-        >
-          Free tools to help you feel safe, grounded, and calm — in under 5 minutes.
-        </motion.p>
+      <section className="max-w-5xl mx-auto px-4 pt-20 pb-16">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          {/* Left: text */}
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              className="text-sm font-medium text-sage/80 uppercase tracking-widest mb-4"
+            >
+              Nervous system support
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.07 }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-serif font-medium text-charcoal leading-[1.08] tracking-tight mb-6"
+            >
+              Your Nervous<br />
+              System<br />
+              <span className="text-sage italic">First Aid Kit</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="text-lg text-charcoal/60 max-w-md mb-9 leading-relaxed"
+            >
+              Free tools to help you feel safe, grounded, and calm — in under 5 minutes.
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-        >
-          <Link
-            to="/tools/breathing-exercise"
-            className="w-full sm:w-auto bg-sage text-white font-medium px-8 py-3.5 rounded-2xl hover:bg-sage/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-base"
-          >
-            I need calm now
-          </Link>
-          <Link
-            to="/check-in"
-            className="w-full sm:w-auto glass-card text-charcoal font-medium px-8 py-3.5 rounded-2xl transition-all text-base"
-          >
-            Start daily check-in
-          </Link>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.22 }}
+              className="flex flex-col sm:flex-row gap-3 mb-8"
+            >
+              <Link
+                to="/tools/breathing-exercise"
+                className="inline-flex items-center justify-center bg-sage text-white font-semibold px-7 py-3.5 rounded-2xl hover:bg-sage/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-base"
+              >
+                I need calm now
+              </Link>
+              <Link
+                to="/check-in"
+                className="inline-flex items-center justify-center bg-slate text-charcoal font-semibold px-7 py-3.5 rounded-2xl border border-charcoal/10 hover:border-sage/30 hover:bg-slate/80 transition-all text-base"
+              >
+                Start daily check-in
+              </Link>
+            </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-xs text-charcoal/40"
-        >
-          Based on somatic principles, polyvagal theory, and nervous system science. No sign-up. No cost.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-xs text-charcoal/38 leading-relaxed"
+            >
+              Based on somatic principles, polyvagal theory &amp; nervous system science.<br />
+              No sign-up. No cost.
+            </motion.p>
+          </div>
+
+          {/* Right: animated organic shape */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
+            className="hidden lg:flex items-center justify-center relative"
+            aria-hidden="true"
+          >
+            {/* Outer glow ring */}
+            <div className="absolute w-72 h-72 rounded-full bg-sage/10 animate-blob-pulse blur-2xl" />
+            {/* Mid blob */}
+            <div className="absolute w-56 h-56 rounded-full bg-clay/15 animate-blob-pulse blur-lg" style={{ animationDelay: '2s' }} />
+            {/* Main animated blob — float wrapper separates translateY from shape morph */}
+            <div className="animate-float">
+              <div className="w-48 h-48 bg-gradient-to-br from-sage/30 to-sage/50 animate-blob-pulse shadow-xl shadow-sage/20" />
+            </div>
+            {/* Floating accent dot */}
+            <div className="absolute top-8 right-12 w-4 h-4 rounded-full bg-clay/60 animate-float" style={{ animationDelay: '1s' }} />
+            <div className="absolute bottom-10 left-10 w-2.5 h-2.5 rounded-full bg-sage/50 animate-float" style={{ animationDelay: '3s' }} />
+          </motion.div>
+        </div>
       </section>
 
       {/* What Soften is */}
-      <section className="bg-sage/6 border-y border-sage/15 py-10">
+      <section className="bg-sage/8 border-y border-sage/20 py-10">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-charcoal/70 text-base leading-relaxed max-w-2xl mx-auto">
             When stress, anxiety, or overwhelm hits, your body needs support. Soften gives you instant
@@ -156,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* Check-in CTA */}
-      <section className="bg-ocean/6 border-y border-ocean/15 py-12">
+      <section className="bg-clay/8 border-y border-clay/15 py-12">
         <FadeInSection>
           <div className="max-w-2xl mx-auto px-4 text-center">
             <p className="text-xl font-semibold text-charcoal mb-2">Not sure where to start?</p>

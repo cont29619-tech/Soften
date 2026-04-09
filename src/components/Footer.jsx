@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <Link to="/" className="text-xl font-semibold text-sage">Soften</Link>
+            <Link to="/" className="text-2xl font-serif font-medium italic text-sage">Soften</Link>
             <p className="mt-2 text-sm text-charcoal/55 leading-relaxed">
               Your nervous system first aid kit. Free, instant, no sign-up required.
             </p>

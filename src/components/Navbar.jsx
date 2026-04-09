@@ -24,7 +24,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl font-semibold text-sage tracking-tight shrink-0"
+          className="text-2xl font-serif font-medium italic text-sage tracking-tight shrink-0"
           aria-label="Soften — home"
         >
           Soften
@@ -86,7 +86,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <nav
-          className="md:hidden bg-bg border-t border-charcoal/8 px-4 py-3 flex flex-col gap-1"
+          className="md:hidden bg-bg/95 border-t border-[#EDE9E2] px-4 py-3 flex flex-col gap-1"
           aria-label="Mobile navigation"
         >
           {NAV_LINKS.map(link => (
