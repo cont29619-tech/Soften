@@ -26,13 +26,13 @@ export default function Orienting() {
   const [isDone, setIsDone] = useState(false)
   const [paused, setPaused] = useState(false)
 
-  const stateRef = useRef({ promptIndex: 0, phaseStart: 0 })
+  const stateRef = useRef({ promptIndex: 0, phaseStart: 0, elapsedOnPause: 0 })
   const timerRef = useRef(null)
 
   useEffect(() => {
     if (!started || isDone || paused) return
 
-    stateRef.current.phaseStart = Date.now()
+    stateRef.current.phaseStart = Date.now() - stateRef.current.elapsedOnPause
     timerRef.current = setInterval(() => {
       const pDur = PROMPTS[stateRef.current.promptIndex].duration
       const elapsedMs = Date.now() - stateRef.current.phaseStart
@@ -47,6 +47,7 @@ export default function Orienting() {
         } else {
           stateRef.current.promptIndex = next
           stateRef.current.phaseStart = Date.now()
+          stateRef.current.elapsedOnPause = 0
           setPromptIndex(next)
           setSecondsLeft(PROMPTS[next].duration)
         }
@@ -56,7 +57,7 @@ export default function Orienting() {
   }, [started, isDone, promptIndex, paused])
 
   function handleStart() {
-    stateRef.current = { promptIndex: 0, phaseStart: Date.now() }
+    stateRef.current = { promptIndex: 0, phaseStart: Date.now(), elapsedOnPause: 0 }
     setPromptIndex(0)
     setSecondsLeft(PROMPTS[0].duration)
     setStarted(true)
@@ -66,10 +67,10 @@ export default function Orienting() {
 
   function handleTogglePause() {
     if (paused) {
-      stateRef.current.phaseStart = Date.now()
-      setSecondsLeft(PROMPTS[stateRef.current.promptIndex].duration)
+      stateRef.current.elapsedOnPause = 0
       setPaused(false)
     } else {
+      stateRef.current.elapsedOnPause = Date.now() - stateRef.current.phaseStart
       clearInterval(timerRef.current)
       setPaused(true)
     }
