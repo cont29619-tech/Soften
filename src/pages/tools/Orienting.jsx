@@ -24,12 +24,13 @@ export default function Orienting() {
   const [promptIndex, setPromptIndex] = useState(0)
   const [secondsLeft, setSecondsLeft] = useState(PROMPTS[0].duration)
   const [isDone, setIsDone] = useState(false)
+  const [paused, setPaused] = useState(false)
 
   const stateRef = useRef({ promptIndex: 0, phaseStart: 0 })
   const timerRef = useRef(null)
 
   useEffect(() => {
-    if (!started || isDone) return
+    if (!started || isDone || paused) return
 
     stateRef.current.phaseStart = Date.now()
     timerRef.current = setInterval(() => {
@@ -52,7 +53,7 @@ export default function Orienting() {
       }
     }, 500)
     return () => clearInterval(timerRef.current)
-  }, [started, isDone, promptIndex])
+  }, [started, isDone, promptIndex, paused])
 
   function handleStart() {
     stateRef.current = { promptIndex: 0, phaseStart: Date.now() }
@@ -60,6 +61,18 @@ export default function Orienting() {
     setSecondsLeft(PROMPTS[0].duration)
     setStarted(true)
     setIsDone(false)
+    setPaused(false)
+  }
+
+  function handleTogglePause() {
+    if (paused) {
+      stateRef.current.phaseStart = Date.now()
+      setSecondsLeft(PROMPTS[stateRef.current.promptIndex].duration)
+      setPaused(false)
+    } else {
+      clearInterval(timerRef.current)
+      setPaused(true)
+    }
   }
 
   const current = PROMPTS[promptIndex]
@@ -142,6 +155,16 @@ export default function Orienting() {
               <p className="text-charcoal/75 leading-relaxed text-lg" aria-live="polite">
                 {current?.text}
               </p>
+            </div>
+
+            <div className="mt-4 flex justify-center">
+              <button
+                onClick={handleTogglePause}
+                className="px-6 py-2 rounded-xl border border-charcoal/20 text-sm font-medium text-charcoal/70 hover:bg-charcoal/5 transition-colors"
+                aria-label={paused ? 'Continue exercise' : 'Pause exercise'}
+              >
+                {paused ? 'Continue' : 'Pause'}
+              </button>
             </div>
           </div>
         )}
